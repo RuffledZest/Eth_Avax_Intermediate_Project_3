@@ -1,9 +1,9 @@
-## Custom ERC20 Token
+# Custom ERC20 Token
 
 This Project demostrates the  smart contract to create our own ERC20 token and deploy it using HardHat localnetwork.
 
 
-## Description
+# Description
 
 * This project includes all the functionalities of ERC20 token (the contract implements ERC20)
 * Along with the basic functionality it also follows the following criteria:
@@ -13,11 +13,11 @@ This Project demostrates the  smart contract to create our own ERC20 token and d
 
 This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a Hardhat Ignition module that deploys that contract.
 
-## Getting Started
+# Getting Started
 
 Try running some of the following tasks:
 
-# Installing
+## Installing
 
 ```shell
 npx hardhat help
