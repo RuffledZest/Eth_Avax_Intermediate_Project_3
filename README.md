@@ -60,9 +60,9 @@ npx hardhat help
 
 ## Authors
 
-Name: Vibhansh Alok
-MetacrafterID: RuffledZest (vibhanshalok@gmail.com)
-Loom Video Link: https://www.loom.com/share/335262a7207d4ac38ac1135a041aa125
+* Name: Vibhansh Alok
+* MetacrafterID: RuffledZest (vibhanshalok@gmail.com)
+* Loom Video Link: https://www.loom.com/share/335262a7207d4ac38ac1135a041aa125
 
 ## License
 
