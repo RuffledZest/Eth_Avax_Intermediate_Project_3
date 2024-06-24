@@ -10,10 +10,28 @@ A SmartContract 'RuffledZest.sol' deployed on Hardhat local network which implem
 * This project implements all the functionalities of ERC20 token (the contract implements ERC20) which includes: mint, burn, approve, transfer, transferFrom, transferOwnership, allowance, balanceOf, decimals, name, owner, symbol, totalSupply.
 
 
-    * The Function 'mint' takes 2 parameters (address to, uint val) and is marked OwnerOnly, so only owner can mint val to any account. 
+    * The Function 'mint' takes 2 parameters (address to, uint val) and is marked OwnerOnly, so only owner can mint val to any account.
+    ```shell
+    function mint(address to, uint256 val) public onlyOwner {
+        _mint(to, val);
+        
+    }
+    ``` 
     * The Function 'burn' takes 1 parameter (uint val) and can be called by any user. It is used to burn the token val on the network.
+    ```shell
+    function burn(uint256 val) public {
+        _burn(_msgSender(), val);
+    }
+    ```
     * The Function 'transferFrom' overrides the orignal 'transferFrom' function from ERC20. It takes 3 parameters (address from, address to, uint value). It can be called by any user to transfer token (RFZ value) to any legit address.
-    Note: user will be able to spend Token only if it's approved (given allowance to the spender).
+    
+    ```shell
+    function transferFrom(address from, address to, uint256 value) public override returns (bool) {
+        require(verify(to), "Invalid address");
+        return super.transferFrom(from, to, value);
+    }
+    ```
+    Note: User will be able to spend Token only if it's approved (given allowance to the spender).
 
 ## Getting Started
 
