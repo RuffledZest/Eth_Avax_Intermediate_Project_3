@@ -85,3 +85,67 @@ npx hardhat help
 ## License
 
 This project is licensed under the MIT License - see the LICENSE.md file for details.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Project Title: ETH_Project - ETH PROOF: Begginer EVM course
+Introducing a fundamental Solidity smart contract with all the required functionality, such as token minting and burning, that simulates a token.
+
+## Description
+
+* The MyToken.sol file contains three state variables
+    * name : stores the name of the token.
+    * symbol: stores the abbreviation of the token
+    * totalSupply: stores the initial amount of token in the chain (by default set to 0)
+
+    ```shell
+    string public name = "TokenName";
+    string public symbol = "TKN";
+    uint256 public totalSupply = 0;
+    ```
+* The code also has mapping of address to balances
+
+    ```shell
+    mapping(address=> uint) public balance;
+    ```
+* We have two functions: 
+    * mint() function, it takes two parameters (address and the value). Once mint is called the the totalSupply will be increased by that value. Also the balance of that address will also be incremented by value.
+
+    ```shell
+    function mint(address _account, uint256 _value) public {
+        totalSupply += _value;
+        balance[_account]+= _value;
+    }
+    ```
+
+    * burn() function. It also takes two parameters (address and value). it is exact opposite of mint() with a condition. The condition being whether the balance of that particular address is greater than the value to be burnt. if condition satisfies the totalSupply will be decreased by that value. Also the balance of that address will also be decremented by value.
+
+    ```shell
+    function burn(address _account, uint256 _value) public {
+        if(balance[_account]>= _value){
+            totalSupply -= _value;
+            balance[_account] -= _value;
+        }
+    }
+    ```
+
+## Getting Started and Code
+You can use Remix, an online Solidity IDE, to run this application. Start using the Remix website by going to https://remix.ethereum.org/.
+
+1. On the Remix website, click the "+" sign in the left sidebar to begin a new file. Save the file with the extension.sol, for instance, Token.sol. After copying the code from the file MyToken.sol, paste it in the remix file.
+
+2. Once pasted, compile the code. Then deploy it. 
+3. On successful deployment user can interact with the code and use the following commands: mint(), burn(), balance(), name, symbol, totalSupply.
+
+## Author 
